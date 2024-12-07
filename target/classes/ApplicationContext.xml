@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+  <bean id="empbean" class="com.klef.jfsd.exam.SetterDI.EmployeeSetter">
+  <property name="id" value="1661"></property>
+  <property name="name" value="mohan"></property>
+  <property name="salary" value="45000.50"></property>
+  <property name="department" value="CSE"></property>
+  <property name="skills">
+  <list>
+  <value>TECHNICAL</value>
+  <value>MERKETING</value>
+  <value>MANAGEMENT</value>
+  </list>
+  </property>
+  </bean>
+  
+  <bean id="empconbean" class="com.klef.jfsd.exam.ConstructorDI.Employee">
+  
+  <constructor-arg value="1661"/>
+  <constructor-arg value="Mohith"/>
+  <constructor-arg value="CSE"/>
+  <constructor-arg value="38000.8"/>
+  
+  <constructor-arg>
+  <list>
+  <value>AWS CP</value>
+  <value>RED HAT</value>
+  <value>SERVICE NOW ADMIN</value>
+  </list>
+  </constructor-arg>
+  
+  
+  </bean>
+  
+  <bean id="ibean" class="com.klef.jfsd.exam.AutoWiring.Instructor">
+  
+  <property name="id" value ="1661"></property>
+  <property name="name" value ="mohan"></property>
+  <property name="email" value="mohan@gmail.com"></property>
+  <property name="PhoneNumber" value="9573543988"></property>
+  <property name="course" ref="coursebean"></property>
+  </bean>
+  
+  <bean id="coursebean" class="com.klef.jfsd.exam.AutoWiring.Course">
+  
+  <property name="cid" value="1"></property>
+  <property name="cname" value="JFSD"></property>
+  <property name="credits" value="4"></property>
+  
+  </bean>
+    
+</beans>
